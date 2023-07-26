@@ -1,0 +1,8 @@
+FROM certbot/certbot:arm32v6-v1.5.0
+
+WORKDIR /app
+RUN apk update && apk add openssl
+
+COPY run.sh run.sh
+
+ENTRYPOINT ["sh", "./run.sh"]
